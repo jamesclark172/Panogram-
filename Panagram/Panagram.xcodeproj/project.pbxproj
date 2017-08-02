@@ -10,6 +10,7 @@
 		BBDABF7C1F2CF5DA0010FC0B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABF7B1F2CF5DA0010FC0B /* main.swift */; };
 		BBDABF831F2CF6E90010FC0B /* ConsoleIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABF821F2CF6E90010FC0B /* ConsoleIO.swift */; };
 		BBDABF851F2D0A810010FC0B /* Panagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABF841F2D0A810010FC0B /* Panagram.swift */; };
+		E4155C301F2FD73F00A5E588 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4155C2F1F2FD73F00A5E588 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		BBDABF7B1F2CF5DA0010FC0B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BBDABF821F2CF6E90010FC0B /* ConsoleIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleIO.swift; sourceTree = "<group>"; };
 		BBDABF841F2D0A810010FC0B /* Panagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Panagram.swift; sourceTree = "<group>"; };
+		E4155C2F1F2FD73F00A5E588 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		BBDABF6F1F2CF5DA0010FC0B = {
 			isa = PBXGroup;
 			children = (
+				E4155C2F1F2FD73F00A5E588 /* StringExtension.swift */,
 				BBDABF841F2D0A810010FC0B /* Panagram.swift */,
 				BBDABF821F2CF6E90010FC0B /* ConsoleIO.swift */,
 				BBDABF7A1F2CF5DA0010FC0B /* Panagram */,
@@ -126,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4155C301F2FD73F00A5E588 /* StringExtension.swift in Sources */,
 				BBDABF7C1F2CF5DA0010FC0B /* main.swift in Sources */,
 				BBDABF831F2CF6E90010FC0B /* ConsoleIO.swift in Sources */,
 				BBDABF851F2D0A810010FC0B /* Panagram.swift in Sources */,
@@ -260,6 +264,7 @@
 				BBDABF811F2CF5DA0010FC0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

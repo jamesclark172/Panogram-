@@ -13,14 +13,14 @@ enum OutputType {
     case standard
 }
 
-class ConsoleID {
+class ConsoleIO {
     
-    func writeMessage(_message: String, to: OutputType = .standard) {
+    func writeMessage(_ message: String, to: OutputType = .standard) {
         switch to {
         case.standard:
-            print("\(_message)\n")
+            print("\(message)\n")
         case.error:
-            fputs("Error: \(_message)\n", stderr)
+            fputs("Error: \(message)\n", stderr)
         }
     }
     
@@ -28,13 +28,13 @@ class ConsoleID {
         
         let executableName = (CommandLine.arguments[0] as NSString).lastPathComponent
         
-        writeMessage(_message: "usage:")
-        writeMessage(_message: "\(executableName) -a string1 string2")
-        writeMessage(_message: "or")
-        writeMessage(_message: "\(executableName) -p string")
-        writeMessage(_message: "or")
-        writeMessage(_message: "\(executableName) -h to show usage information")
-        writeMessage(_message: "Type \(executableName) without an option to enter interactive mode.")
+        writeMessage("usage:")
+        writeMessage("\(executableName) -a string1 string2")
+        writeMessage("or")
+        writeMessage("\(executableName) -p string")
+        writeMessage("or")
+        writeMessage("\(executableName) -h to show usage information")
+        writeMessage("Type \(executableName) without an option to enter interactive mode.")
     }
     
 }

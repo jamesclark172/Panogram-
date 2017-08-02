@@ -21,15 +21,16 @@ enum OptionType: String {
             case "h": self = .help
             default: self = .unknown
         }
+      
     }
+  
 }
 
 class Panagram {
     
-    let consoleID = ConsoleID()
-
-    
-    func getOption(_option: String) -> (option:OptionType, value: String) {
+    let consoleIO = ConsoleIO()
+  
+    func getOption(_ option: String) -> (option:OptionType, value: String) {
         return (OptionType(value: option), option)
     }
 
@@ -39,12 +40,54 @@ class Panagram {
         let argCount = CommandLine.argc
         //2
         let argument = CommandLine.arguments[1]
-        //3 I made a edit on this line, check later for error
-        let (option, value) = getOption(_option: argument.substring(from: argument.index(argument.startIndex, offsetBy: 1)))
-        //4 I made a edit on this line, check later for error
-        consoleID.writeMessage(_message: "Argument count: \(argCount) Option: \(option) value: \(value)")
+        //3
+        let (option, value) = getOption(argument.substring(from: argument.index(argument.startIndex, offsetBy: 1)))
+        //4 
+      switch option {
+      case .anagram:
+        
+        if argCount != 4 {
+          if argCount > 4 {
+            consoleIO.writeMessage("Too many arguments for option \(option.rawValue)", to: .error)
+          } else {
+            consoleIO.writeMessage("Too few arguments for option \(option.rawValue)", to: .error)
+          }
+          consoleIO.printUsage()
+        } else {
+          
+          let first = CommandLine.arguments[2]
+          let second = CommandLine.arguments[3]
+          
+          if first.isAnagramOf(second) {
+            consoleIO.writeMessage("\(second) is an anagram of \(first)")
+          } else {
+            consoleIO.writeMessage("\(second) is not an anagram of \(first)")
+          }
+        }
+      case .palindrome:
+        
+        if argCount != 3 {
+          if argCount > 3 {
+            consoleIO.writeMessage("Too many arguments for option \(option.rawValue)", to: .error)
+          } else {
+            consoleIO.writeMessage("Too few arguments for option \(option.rawValue)", to: .error)
+          }
+          consoleIO.printUsage()
+        } else {
+          
+          let s = CommandLine.arguments[2]
+          let isPalindrome = s.isPalindrome()
+          consoleIO.writeMessage("\(s) is \(isPalindrome ? "" : "not ")a palindrome")
+        }
+        
+      case .help:
+        consoleIO.printUsage()
+      case .unknown:
+        
+        consoleIO.writeMessage("Unknown option \(value)")
+        consoleIO.printUsage()
+      }
+      
     }
-    
-
-    
+  
 }
